@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 09, 2017 at 05:41 PM
+-- Generation Time: Apr 10, 2017 at 07:03 AM
 -- Server version: 5.7.14
 -- PHP Version: 5.6.25
 
@@ -35,15 +35,16 @@ CREATE TABLE `deals` (
   `Price` float NOT NULL,
   `EffectivePrice` float UNSIGNED NOT NULL,
   `ValidUntil` date NOT NULL,
-  `Image` text NOT NULL
+  `Image` text NOT NULL,
+  `Description` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `deals`
 --
 
-INSERT INTO `deals` (`DealID`, `Sellername`, `Deal`, `ProductName`, `Category`, `Price`, `EffectivePrice`, `ValidUntil`, `Image`) VALUES
-('1', 'Athul', 'xyz', 'abc', '', 0, 100, '2017-03-01', '');
+INSERT INTO `deals` (`DealID`, `Sellername`, `Deal`, `ProductName`, `Category`, `Price`, `EffectivePrice`, `ValidUntil`, `Image`, `Description`) VALUES
+('1', 'Athul', 'xyz', 'abc', '', 0, 100, '2017-03-01', '', '');
 
 -- --------------------------------------------------------
 
