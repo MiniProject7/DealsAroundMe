@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 10, 2017 at 07:03 AM
+-- Generation Time: Apr 10, 2017 at 01:47 PM
 -- Server version: 5.7.14
 -- PHP Version: 5.6.25
 
@@ -44,7 +44,8 @@ CREATE TABLE `deals` (
 --
 
 INSERT INTO `deals` (`DealID`, `Sellername`, `Deal`, `ProductName`, `Category`, `Price`, `EffectivePrice`, `ValidUntil`, `Image`, `Description`) VALUES
-('1', 'Athul', 'xyz', 'abc', '', 0, 100, '2017-03-01', '', '');
+('1', 'Athul', 'xyz', 'abc', '', 0, 100, '2017-03-01', '', ''),
+('2', 'qd', 'blah', 'popo', 'lol', 123, 23, '2017-04-21', 'https://www.w3schools.com/css/trolltunga.jpg', 'blah');
 
 -- --------------------------------------------------------
 
@@ -64,15 +65,16 @@ CREATE TABLE `sellers` (
   `Phone` int(10) UNSIGNED NOT NULL,
   `Email` varchar(30) NOT NULL,
   `Password` varchar(200) NOT NULL,
-  `Rating` int(1) UNSIGNED NOT NULL DEFAULT '5'
+  `Rating` int(1) UNSIGNED NOT NULL DEFAULT '5',
+  `Image` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `sellers`
 --
 
-INSERT INTO `sellers` (`Username`, `FName`, `LName`, `CompanyName`, `Address`, `City`, `State`, `PostalCode`, `Phone`, `Email`, `Password`, `Rating`) VALUES
-('Athul', 'Athul', 'Tony', 'AT', 'xyzw', 'abcd', 'fgh', 123456, 1234567, 'at@at.com', '*84FF895865846F160D4303DA063B4E6E3E823324', 5);
+INSERT INTO `sellers` (`Username`, `FName`, `LName`, `CompanyName`, `Address`, `City`, `State`, `PostalCode`, `Phone`, `Email`, `Password`, `Rating`, `Image`) VALUES
+('Athul', 'Athul', 'Tony', 'AT', 'xyzw', 'abcd', 'fgh', 123456, 1234567, 'at@at.com', '*84FF895865846F160D4303DA063B4E6E3E823324', 5, '');
 
 -- --------------------------------------------------------
 
@@ -88,6 +90,19 @@ CREATE TABLE `users` (
   `Phone` int(10) UNSIGNED NOT NULL,
   `Email` varchar(40) NOT NULL,
   `Image` text NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `wishlist`
+--
+
+CREATE TABLE `wishlist` (
+  `Username` varchar(30) NOT NULL,
+  `Deal` varchar(30) NOT NULL,
+  `Sellername` varchar(30) NOT NULL,
+  `ProductName` varchar(30) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
